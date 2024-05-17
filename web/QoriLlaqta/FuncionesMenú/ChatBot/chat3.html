@@ -1,147 +1,196 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ChatBot</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBot</title>
 
-        <!-- Enlace a la hoja de estilo de Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-
+    <!-- Enlace a la hoja de estilo de Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
+      <h1 class="text-center">CERTIFICADO MÉDICO</h1>
 
-        <h1 class="text-center">CERTIFICADO MÉDICO</h1>
-
-        <div class="media">
-            <img src="https://img.freepik.com/vector-gratis/chatbot-mensaje-chat-vectorart_78370-4104.jpg" class="rounded-circle float-left img-thumbnail" width="75px" alt="...">
-            <div class="media-body">
-                <h5 style="margin:10px">ChatBot</h5>
-                <span style="margin-left: 10px">Online</span>
-            </div>
+      <div class="media">
+        <img
+          src="https://img.freepik.com/vector-gratis/chatbot-mensaje-chat-vectorart_78370-4104.jpg"
+          class="rounded-circle float-left img-thumbnail"
+          width="75px"
+          alt="..."
+        />
+        <div class="media-body">
+          <h5 style="margin: 10px">ChatBot</h5>
+          <span style="margin-left: 10px">Online</span>
         </div>
+      </div>
 
-        <!-- Contenedor de mensajes -->
-        <div id="container" class="container border overflow-auto" style="height: 500px">
-            <!-- Los mensajes se agregarán dinámicamente aquí -->
+      <!-- Contenedor de mensajes -->
+      <div
+        id="container"
+        class="container border overflow-auto"
+        style="height: 500px"
+      >
+        <!-- Los mensajes se agregarán dinámicamente aquí -->
+      </div>
+
+      <div class="input-group">
+        <input id="textbox" type="text" class="form-control" />
+        <div class="input-group-append">
+          <button id="sendBtn" type="button" class="btn btn-primary">
+            Send
+          </button>
         </div>
-
-        <div class="input-group">
-            <input id="textbox" type="text" class="form-control"/>
-            <div class="input-group-append">
-                <button id="sendBtn" type="button" class="btn btn-primary">Send</button>
-            </div>
-        </div>
-
-        <!-- Imagen estática para representar el código QR -->
-        <div class="mt-3" id="qrContainer" style="display: none;">
-            <img id="qrImage" src='qr/CertificadoMedico.png' alt="QR Code" style="max-width: 200px;">
-        </div>
-
+      </div>
     </div>
 
     <!-- Inclusión de scripts de Bootstrap y otros -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Elementos del chatbot
-        var sendBtn = document.getElementById('sendBtn');
-        var textbox = document.getElementById('textbox');
-        var chatContainer = document.getElementById('container');
-        var qrContainer = document.getElementById('qrContainer');
-        var qrImage = document.getElementById('qrImage');
+      // Elementos del chatbot
+      var sendBtn = document.getElementById("sendBtn");
+      var textbox = document.getElementById("textbox");
+      var chatContainer = document.getElementById("container");
 
-        // Objeto para almacenar datos del usuario durante la interacción
-        var user = {
-            message: "",
-            counter: 0,
-            name: ""
-        };
+      // Objeto para almacenar datos del usuario durante la interacción
+      var user = {
+        message: "",
+        counter: 0,
+        name: "",
+      };
 
-        // Función para enviar mensajes del médico (chatbot)
-        function doctorSendMessage(messageText) {
-            var messageElement = document.createElement('div');
-            messageElement.classList.add('w-50');
-            messageElement.classList.add('float-left');
-            messageElement.classList.add('shadow-sm');
-            messageElement.style.margin = "10px";
-            messageElement.style.padding = "5px";
+      // Función para enviar mensajes del médico (chatbot)
+      function doctorSendMessage(messageText) {
+        var messageElement = document.createElement("div");
+        messageElement.classList.add("w-50");
+        messageElement.classList.add("float-left");
+        messageElement.classList.add("shadow-sm");
+        messageElement.style.margin = "10px";
+        messageElement.style.padding = "5px";
 
-            messageElement.innerHTML = "<span>Médico: </span>" +
-                "<span style='margin-top:10px; padding:10px'>" + messageText + "</span>";
+        messageElement.innerHTML =
+          "<span>Médico: </span>" +
+          "<span style='margin-top:10px; padding:10px'>" +
+          messageText +
+          "</span>";
 
-            messageElement.animate([{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }], { duration: 1000 });
+        messageElement.animate(
+          [{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }],
+          { duration: 1000 }
+        );
 
-            chatContainer.appendChild(messageElement);
+        chatContainer.appendChild(messageElement);
 
-            // Desplazarse hasta el último mensaje
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-        }
+        // Desplazarse hasta el último mensaje
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
 
-        // Función para procesar mensajes del usuario y mostrar la imagen del código QR
-        function processMessage() {
-            var userMessage = user.message.toLowerCase().trim();
+      // Función para enviar la imagen del código QR como mensaje
+      function doctorSendQR() {
+        var qrElement = document.createElement("div");
+        qrElement.classList.add("w-50");
+        qrElement.classList.add("float-left");
+        qrElement.classList.add("shadow-sm");
+        qrElement.style.margin = "10px";
+        qrElement.style.padding = "5px";
 
-            switch (user.counter) {
-                case 0:
-                    // Reconocimiento por documento de identificación (DNI)
-                    if (validateDNI(userMessage)) {
-                        user.name = "Kenyi"; // Nombre asociado al DNI proporcionado
-                        doctorSendMessage("Hola " + user.name.split(' ')[0] + ". Su certificado médico ha sido generado con éxito.");
-                        qrContainer.style.display = 'block'; // Mostrar el contenedor del código QR
-                        user.counter++;
-                    } else {
-                        doctorSendMessage("Por favor, introduzca un número de DNI válido (8 dígitos numéricos).");
-                    }
-                    break;
-            }
-        }
+        qrElement.innerHTML =
+          "<span>Médico: </span>" +
+          "<div style='margin-top:10px; padding:10px'>" +
+          "<img src='qr/CertificadoMedico.png' alt='QR Code' style='max-width: 200px' />" +
+          "</div>";
 
-        // Función para validar número de DNI (8 dígitos numéricos)
-        function validateDNI(dni) {
-            return /^\d{8}$/.test(dni);
-        }
+        qrElement.animate(
+          [{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }],
+          { duration: 1000 }
+        );
 
-        // Función para enviar mensajes del usuario
-        function sendMessage(messageText) {
-            var messageElement = document.createElement('div');
-            messageElement.classList.add('w-50');
-            messageElement.classList.add('float-right');
-            messageElement.classList.add('shadow-sm');
-            messageElement.style.margin = "10px";
-            messageElement.style.padding = "5px";
+        chatContainer.appendChild(qrElement);
 
-            messageElement.innerHTML = "<span>Tú: </span>" +
-                "<span style='margin-top:10px; padding:10px'>" + messageText + "</span>";
+        // Desplazarse hasta el último mensaje
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
 
-            messageElement.animate([{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }], { duration: 1000 });
+      // Función para procesar mensajes del usuario y mostrar la imagen del código QR
+      function processMessage() {
+        var userMessage = user.message.toLowerCase().trim();
 
-            chatContainer.appendChild(messageElement);
-
-            // Desplazarse hasta el último mensaje
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-
-            // Procesar el mensaje del usuario
-            user.message = messageText;
-            processMessage();
-        }
-
-        // Evento click en el botón "Send"
-        sendBtn.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-
-            if (textbox.value.trim() === "") {
-                alert('Por favor, escribe un mensaje.');
+        switch (user.counter) {
+          case 0:
+            // Reconocimiento por documento de identificación (DNI)
+            if (validateDNI(userMessage)) {
+              user.name = "Kenyi"; // Nombre asociado al DNI proporcionado
+              doctorSendMessage(
+                "Hola " +
+                  user.name.split(" ")[0] +
+                  ". Su certificado médico ha sido generado con éxito."
+              );
+              doctorSendQR(); // Mostrar la imagen del código QR
+              user.counter++;
             } else {
-                let messageText = textbox.value.trim();
-                sendMessage(messageText);
-                textbox.value = ""; // Limpiar el campo de texto después de enviar el mensaje
+              doctorSendMessage(
+                "Por favor, introduzca un número de DNI válido (8 dígitos numéricos)."
+              );
             }
-        });
-        // Ejecutar un mensaje inicial del médico para historial clínico
-        doctorSendMessage("Buen día. Soy el Dr. Marcos Soto. Para acceder a tu certificado medico, necesitaremos verificar algunos datos personales. Por favor, introduce tu documento de identificación (DNI).");
-    </script>
+            break;
+        }
+      }
 
-    </body>
+      // Función para validar número de DNI (8 dígitos numéricos)
+      function validateDNI(dni) {
+        return /^\d{8}$/.test(dni);
+      }
+
+      // Función para enviar mensajes del usuario
+      function sendMessage(messageText) {
+        var messageElement = document.createElement("div");
+        messageElement.classList.add("w-50");
+        messageElement.classList.add("float-right");
+        messageElement.classList.add("shadow-sm");
+        messageElement.style.margin = "10px";
+        messageElement.style.padding = "5px";
+
+        messageElement.innerHTML =
+          "<span>Tú: </span>" +
+          "<span style='margin-top:10px; padding:10px'>" +
+          messageText +
+          "</span>";
+
+        messageElement.animate(
+          [{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }],
+          { duration: 1000 }
+        );
+
+        chatContainer.appendChild(messageElement);
+
+        // Desplazarse hasta el último mensaje
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        // Procesar el mensaje del usuario
+        user.message = messageText;
+        processMessage();
+      }
+
+      // Evento click en el botón "Send"
+      sendBtn.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+        if (textbox.value.trim() === "") {
+          alert("Por favor, escribe un mensaje.");
+        } else {
+          let messageText = textbox.value.trim();
+          sendMessage(messageText);
+          textbox.value = ""; // Limpiar el campo de texto después de enviar el mensaje
+        }
+      });
+      // Ejecutar un mensaje inicial del médico para historial clínico
+      doctorSendMessage(
+        "Buen día. Soy el Dr. Marcos Soto. Para acceder a tu certificado médico, necesitaremos verificar algunos datos personales. Por favor, introduce tu documento de identificación (DNI)."
+      );
+    </script>
+  </body>
 </html>
