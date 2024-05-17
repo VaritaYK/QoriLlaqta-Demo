@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Salud</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Centro de Salud</h1>
+        <div class="form">
+            <label for="tipoEntidad">Tipo de entidad:</label>
+            <select id="tipoEntidad">
+                <option value="publica">Pública</option>
+                <option value="privada">Privada</option>
+            </select>
+            <label for="hospital">Hospital o Clínica:</label>
+            <select id="hospital">
+                <option value="">Seleccione una opción</option>
+            </select>
+            <label for="doctor">Doctor:</label>
+            <select id="doctor">
+                <option value="">Seleccione un doctor</option>
+            </select>
+            <label for="telefono">Número de teléfono:</label>
+            <input type="tel" id="telefono" placeholder="Ingrese su número de teléfono">
+            <label for="fecha">Fecha y hora de la consulta:</label>
+            <input type="datetime-local" id="fecha">
+            <label for="servicio">Servicio requerido:</label>
+            <select id="servicio">
+                <option value="cita">Cita médica</option>
+                <option value="historia">Historia clínica</option>
+                <option value="receta">Certificado Médico</option>
+                <option value="receta">Receta médica</option>
+            </select>
+            <div id="textoReserva"></div>
+            <button id="hacerReserva" onclick="enviarConsulta()">Hacer reserva</button>
+            <button id="iniciarConversacion" onclick="iniciarConversacion()" class="btn-disabled" disabled>Iniciar conversación</button>
+            <div id="cronometro" style="display: none;">
+                Tiempo restante: <span id="contador">00:00:00</span>
+            </div>
+        </div>
+    </div>
+    <script src="./JS/script.js"></script>
+</body>
+</html>

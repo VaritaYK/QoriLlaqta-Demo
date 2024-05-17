@@ -1,0 +1,346 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: #ffffff;
+    height: 100vh;
+}
+.container {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 100px;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Distribución en tres columnas */
+    gap: 20px; /* Espacio entre las columnas */
+    align-items: center;
+}
+
+header {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: #DB8A74;
+    height: 10vh;
+}
+
+header button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 10em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding: 15px;
+    background-color: #264653;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #122a34;
+}
+
+.product-image {
+    grid-column: 1; 
+    overflow: hidden;
+    text-align: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border: none; 
+}
+
+.product-image:hover img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    grid-column: 2;
+    padding: 30px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.product-manufacturer {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.dosage-info {
+    margin-bottom: 20px;
+}
+
+.quantity-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.quantity-label {
+    margin-bottom: 10px;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity-button {
+    padding: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.buy-button {
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: darkgreen;
+}
+
+.additional-info {
+    grid-column: 3; 
+    background-color: #E7E7E7;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+.additional-info h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.additional-info p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 50px;
+        grid-template-columns: 1fr 2fr; 
+    }
+
+    .additional-info {
+        grid-column: span 2; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        grid-template-columns: 1fr; 
+    }
+
+    .product-image, .product-info, .additional-info {
+        grid-column: span 1; 
+    }
+}
+
+@media (max-width: 480px) {
+    .header button {
+        width: 8em;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .product-description, .dosage-info, .additional-info {
+        font-size: 14px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+    .buy-button, .quantity-button {
+        font-size: 12px;
+    }
+
+    .quantity-input {
+        width: 50px;
+        font-size: 14px;
+    }
+}
+
+.quantity-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.quantity-label {
+    margin-bottom: 10px;
+}
+
+.quantity-button {
+    padding: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    margin: 0;
+    border: none;
+    background: none;
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background: none;
+}
+
+.buy-button {
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.buy-button:hover {
+    background-color: darkgreen;
+}
+
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: #ffffff; 
+}
+
+.quantity-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E7E7E7; 
+    padding: 20px;
+    border:none;
+}
+
+.quantity-label {
+    margin-bottom: 10px;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    border-radius: 50px; 
+    padding: 5px; 
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: none; 
+    background: none; 
+}
+
+.quantity-button {
+    padding: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    margin: 0;
+    border: none; 
+    background: none; 
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.buy-button {
+    padding: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #db8a74; 
+    color: white;
+    border: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.buy-button:hover {
+    background-color: #aa6f59;
+}

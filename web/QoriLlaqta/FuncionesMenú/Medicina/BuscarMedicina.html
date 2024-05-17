@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Medicamentos</title>
+    <link rel="stylesheet" href="../CSS/styles2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../../InicioSesion/Index.html"><button>Logout</button></a>
+        <a href="../../../CanjearMedicina.html"><button>Canjear</button></a>
+    </header>
+    <div class="container">
+        <h1>Catálogo de Medicamentos</h1>
+        <div class="medicamentos">
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento1.jpg" alt="Medicamento 1">
+                <div class="info">
+                    <h3>Clotrimazol</h3>
+                    <p>Contenido: 1%</p>
+                    <p>Tipo: crema</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <a href="./ComprarMedicina.html"><button class="comprar" data-nombre="Clotrimazol" data-precio="10">Comprar</button></a>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento2.jpg" alt="Medicamento 2">
+                <div class="info">
+                    <h3>Dextrometorfano bromhidrato + Guaifenesina</h3>
+                    <p>Contenido: 10 mg+100mg/5mL</p>
+                    <p>Tipo: Solución oral</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <a href="./ComprarMedicina.html"><button class="comprar" data-nombre="Dextrometorfano bromhidrato + Guaifenesina" data-precio="10">Comprar</button></a>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento3.jpg" alt="Medicamento 3">
+                <div class="info">
+                    <h3>Diclofenaco dietilamina</h3>
+                    <p>Contenido: 23,2mg/g</p>
+                    <p>Tipo: Gel</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Diclofenaco dietilamina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento4.jpg" alt="Medicamento 4">
+                <div class="info">
+                    <h3>Diclofenaco dietilamina</h3>
+                    <p>Contenido: 11,6mg/g</p>
+                    <p>Tipo: Gel</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Diclofenaco dietilamina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento5.jpg" alt="Medicamento 5">
+                <div class="info">
+                    <h3>Diclofenaco Epolamina</h3>
+                    <p>Contenido: 180mg</p>
+                    <p>Tipo: parche transdérmico</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Diclofenaco Epolamina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento6.jpg" alt="Medicamento 6">
+                <div class="info">
+                    <h3>Diclofenaco sódico</h3>
+                    <p>Contenido: 10 mg/g</p>
+                    <p>Tipo: Gel</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Diclofenaco sódico" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento7.jpg" alt="Medicamento 7">
+                <div class="info">
+                    <h3>Hidróxido de Magnesio</h3>
+                    <p>Contenido: 415mg/5mL</p>
+                    <p>Tipo: Suspensión Oral</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Hidróxido de Magnesio" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento8.jpg" alt="Medicamento 8">
+                <div class="info">
+                    <h3>Hipromelosa + Dextran</h3>
+                    <p>Contenido: 3mg + 1mg/mL</p>
+                    <p>Tipo: Solución Oftálmica</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Hipromelosa + Dextran" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento9.png" alt="Medicamento 9">
+                <div class="info">
+                    <h3>Ibuprofeno</h3>
+                    <p>Contenido: 200mg</p>
+                    <p>Tipo: Tableta</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Ibuprofeno" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento10.png" alt="Medicamento 10">
+                <div class="info">
+                    <h3>Ibuprofeno</h3>
+                    <p>Contenido: 200mg</p>
+                    <p>Tipo: Cápsula blanda</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Ibuprofeno" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento11.jpg" alt="Medicamento 11">
+                <div class="info">
+                    <h3>Ibuprofeno</h3>
+                    <p>Contenido: 5%</p>
+                    <p>Tipo: Gel</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Ibuprofeno" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento12.jpg" alt="Medicamento 12">
+                <div class="info">
+                    <h3>Ibuprofeno</h3>
+                    <p>Contenido: 100mg/5mL</p>
+                    <p>Tipo: Suspensión Oral</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Ibuprofeno" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento13.jpg" alt="Medicamento 13">
+                <div class="info">
+                    <h3>Naproxeno</h3>
+                    <p>Contenido: 275 mg</p>
+                    <p>Tipo: tableta</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Naproxeno" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento14.jpg" alt="Medicamento 14">
+                <div class="info">
+                    <h3>Paracetamol</h3>
+                    <p>Contenido: 120mg</p>
+                    <p>Tipo: solución oral</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Paracetamol" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento15.jpg" alt="Medicamento 15">
+                <div class="info">
+                    <h3>Paracetamol</h3>
+                    <p>Contenido: 160 mg</p>
+                    <p>Tipo: jarabe</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Paracetamol" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento16.jpg" alt="Medicamento 16">
+                <div class="info">
+                    <h3>Paracetamol</h3>
+                    <p>Contenido: 500 mg</p>
+                    <p>Tipo: tableta</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <a href="./ComprarMedicina.html"><button class="comprar" data-nombre="Paracetamol" data-precio="10">Comprar</button></a>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento17.jpg" alt="Medicamento 17">
+                <div class="info">
+                    <h3>Paracetamol</h3>
+                    <p>Contenido: 100 mg</p>
+                    <p>Tipo: solución oral</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Paracetamol" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento18.png" alt="Medicamento 18">
+                <div class="info">
+                    <h3>Paracetamol + AAS + cafeína</h3>
+                    <p>Contenido: 250mg+250mg+65mg</p>
+                    <p>Tipo: tableta recubierta</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Paracetamol + AAS + cafeína" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento19.jpg" alt="Medicamento 19">
+                <div class="info">
+                    <h3>Terbinafina</h3>
+                    <p>Contenido: 1%</p>
+                    <p>Tipo: Solución para pulverización cutánea</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Terbinafina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento20.jpg" alt="Medicamento 20">
+                <div class="info">
+                    <h3>Terbinafina</h3>
+                    <p>Contenido: 1%</p>
+                    <p>Tipo: Crema</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Terbinafina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento21.jpg" alt="Medicamento 21">
+                <div class="info">
+                    <h3>ZINAC JB.BAR.100g</h3>
+                    <p>Contenido: ACEITE SULFONADO</p>
+                    <p>Tipo: BAR.100g</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="ZINAC JB.BAR.100g" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento22.jpg" alt="Medicamento 22">
+                <div class="info">
+                    <h3>DERMAC JB.100g</h3>
+                    <p>Contenido: ACEITE SULFONADO</p>
+                    <p>Tipo: JB.100g</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="DERMAC JB.100g" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento23.jpg" alt="Medicamento 23">
+                <div class="info">
+                    <h3>COAROL 4mg</h3>
+                    <p>Contenido: COMP.X20</p>
+                    <p>Tipo: ACENOCUMAROL</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="COAROL 4mg" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento24.jpeg" alt="Medicamento 24">
+                <div class="info">
+                    <h3>ACEBRON 4mg</h3>
+                    <p>Contenido: COMP.X20</p>
+                    <p>Tipo: ACENOCUMAROL</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="ACEBRON 4mg" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento25.jpg" alt="Medicamento 25">
+                <div class="info">
+                    <h3>ISQUELIUM 4mg</h3>
+                    <p>Contenido: COMP.X30</p>
+                    <p>Tipo: ACENOCUMAROL</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="ISQUELIUM 4mg" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento26.png" alt="Medicamento 26">
+                <div class="info">
+                    <h3>ACETAZOLAMIDA 250mg</h3>
+                    <p>Contenido: X20COM.</p>
+                    <p>Tipo: ACETAZOLAMIDA</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="ACETAZOLAMIDA 250mg" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento27.jpg" alt="Medicamento 27">
+                <div class="info">
+                    <h3>VIRONIDA 200mg</h3>
+                    <p>Contenido: SUSP.100ml</p>
+                    <p>Tipo: ACICLOVIR</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="VIRONIDA 200mg" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/SinReceta/Medicamento28.jpg" alt="Medicamento 28">
+                <div class="info">
+                    <h3>EUROVIR 800mg</h3>
+                    <p>Contenido: COMP.X5</p>
+                    <p>Tipo: ACICLOVIR</p>
+                    <p>Requisito: Ninguno</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="EUROVIR 800mg" data-precio="10">Comprar</button>
+                </div>
+            </div>
+                        <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento1.jpg" alt="Medicamento 1">
+                <div class="info">
+                    <h3>Codeína</h3>
+                    <p>Contenido: 100ml</p>
+                    <p>Tipo: Jarabe</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Codeína" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento2.jpg" alt="Medicamento 2">
+                <div class="info">
+                    <h3>Hidrocodona</h3>
+                    <p>Contenido: 10mg/325mg</p>
+                    <p>Tipo: Tableta</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Hidrocodona" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento3.png" alt="Medicamento 3">
+                <div class="info">
+                    <h3>Hidromorfona</h3>
+                    <p>Contenido: 2mg/ml</p>
+                    <p>Tipo: Inyectable</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Hidromorfona" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento4.jpg" alt="Medicamento 4">
+                <div class="info">
+                    <h3>Fentanilo</h3>
+                    <p>Contenido: 2ml</p>
+                    <p>Tipo: Inyectable</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Fentanilo" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento5.jpg" alt="Medicamento 5">
+                <div class="info">
+                    <h3>Levorfanol</h3>
+                    <p>Contenido: 2mg</p>
+                    <p>Tipo: Oral</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Levorfanol" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento6.jpg" alt="Medicamento 6">
+                <div class="info">
+                    <h3>Meperidina</h3>
+                    <p>Contenido: 100mg</p>
+                    <p>Tipo: Inyectable</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Meperidina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento7.jpg" alt="Medicamento 7">
+                <div class="info">
+                    <h3>Metadona</h3>
+                    <p>Contenido: 10mg</p>
+                    <p>Tipo: Oral</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Metadona" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento8.png" alt="Tryptanol 25mg tablet">
+                <div class="info">
+                    <h3>Tryptanol</h3>
+                    <p>Contenido: 25 mg</p>
+                    <p>Tipo: Tableta</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Tryptanol" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento9.jpg" alt="Wellbutrin XL (bupropion HCl, 300mg)">
+                <div class="info">
+                    <h3>Wellbutrin XL (bupropion HCl, 300mg)</h3>
+                    <p>Contenido: 300 mg</p>
+                    <p>Tipo: Tabletas</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Wellbutrin XL" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento10.jpg" alt="Cipramil (R) Citalopram 20mg">
+                <div class="info">
+                    <h3>Cipramil (R) Citalopram 20mg</h3>
+                    <p>Contenido: 20 mg</p>
+                    <p>Tipo: Comprimidos</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Cipramil Citalopram" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento11.jpg" alt="Clomipramina 25 mg">
+                <div class="info">
+                    <h3>Clomipramina 25 mg</h3>
+                    <p>Contenido: 25 mg</p>
+                    <p>Tipo: Tableta recubierta</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Clomipramina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+            <div class="carta">
+                <img src="../IMG/ConReceta/Medicamento12.jpg" alt="Cápsulas Genéricas Duloxetina 30mg">
+                <div class="info">
+                    <h3>Cápsulas Genéricas Duloxetina 30mg</h3>
+                    <p>Contenido: 30 mg</p>
+                    <p>Tipo: Cápsulas</p>
+                    <p>Requisito: Receta médica</p>
+                    <p>Precio: $10</p>
+                    <button class="comprar" data-nombre="Duloxetina" data-precio="10">Comprar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>                         
+        </div>
+    </div>
+    <script src="../JS/script2.js"></script>
+</body>
+</html>

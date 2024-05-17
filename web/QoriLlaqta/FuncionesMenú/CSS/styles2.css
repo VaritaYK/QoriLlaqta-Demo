@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background: #264653;
+    height: 100vh;
+}
+/* Estilos para el encabezado */
+header {
+    display: flex; /* Convertir el contenedor en un flexbox */
+    justify-content: flex-end; /* Alinear los elementos al final del contenedor */
+    align-items: center; /* Centrar verticalmente los elementos */
+    background: #DB8A74;
+    height: 10vh;
+    padding: 0 20px; /* Añadir un espacio a los lados del encabezado */
+}
+
+/* Estilos para los botones del encabezado */
+header button {
+    margin-left: 20px; /* Aumentar el margen entre los botones */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    width: auto; /* Ajustar el ancho automáticamente según el contenido */
+    background-color: #BC654E; /* Cambiar el color del botón "Canjear" */
+    color: white; /* Color de la letra blanco */
+}
+
+/* Estilos para el botón de logout */
+header button:first-child {
+    margin-left: 0; /* Eliminar el margen izquierdo del primer botón */
+    background-color: #264653; /* Mantener el color original del botón "Logout" */
+    top: 50%;
+    right: 20px;
+    width: 10em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding: 15px;
+    background-color: #264653;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #122a34;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #DB8A74;
+}
+
+.medicamentos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.carta {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.carta img {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+
+.info {
+    padding: 10px;
+    margin-bottom: 20px; /* Espaciado entre el texto y el botón */
+}
+
+
+.info h3 {
+    margin-top: 0;
+}
+
+.comprar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 50%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding: 15px;
+    background-color: #DB8A74;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.comprar:hover {
+    background-color: #bc654e;
+}
+
+.hidden {
+    display: none;
+}
+
+/* CSS adicional */
+@media (max-width: 960px) {
+    .medicamentos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .medicamentos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

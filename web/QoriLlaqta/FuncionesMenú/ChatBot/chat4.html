@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChatBot</title>
+
+    <!-- Enlace a la hoja de estilo de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="text-center">RESERVA TU CITA MEDICA</h1>
+
+    <div class="media">
+        <img src="https://img.freepik.com/vector-gratis/chatbot-mensaje-chat-vectorart_78370-4104.jpg" class="rounded-circle float-left img-thumbnail" width="75px" alt="...">
+        <div class="media-body">
+            <h5 style="margin:10px">ChatBot</h5>
+            <span style="margin-left: 10px">Online</span>
+        </div>
+    </div>
+
+    <!-- Contenedor de mensajes -->
+    <div id="container" class="container border overflow-auto" style="height: 500px">
+        <!-- Los mensajes se agregarán dinámicamente aquí -->
+    </div>
+
+    <div class="input-group">
+        <input id="textbox" type="text" class="form-control"/>
+        <div class="input-group-append">
+            <button id="sendBtn" type="button" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Inclusión de scripts de Bootstrap y otros -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+    // Función para agregar un mensaje del chatbot al contenedor
+    function chatbotSendMessage(messageText) {
+        var container = document.getElementById('container');
+        var messageElement = createMessageElement('ChatBot', messageText, 'float-left');
+        container.appendChild(messageElement);
+        scrollToBottom(container);
+    }
+
+    // Función para agregar un mensaje del usuario al contenedor
+    function addUserMessage(messageText) {
+        var container = document.getElementById('container');
+        var messageElement = createMessageElement('You', messageText, 'float-right');
+        container.appendChild(messageElement);
+        scrollToBottom(container);
+    }
+
+    // Función para crear un elemento de mensaje
+    function createMessageElement(sender, messageText, floatDirection) {
+        var messageElement = document.createElement('div');
+        messageElement.classList.add('w-50');
+        messageElement.classList.add(floatDirection);
+        messageElement.classList.add('shadow-sm');
+        messageElement.style.margin = "10px";
+        messageElement.style.padding = "5px";
+
+        var senderLabel = document.createElement('span');
+        senderLabel.textContent = sender + ": ";
+        messageElement.appendChild(senderLabel);
+
+        var messageContent = document.createElement('span');
+        messageContent.style.marginTop = "10px";
+        messageContent.style.padding = "10px";
+        messageContent.textContent = messageText;
+        messageElement.appendChild(messageContent);
+
+        messageElement.animate([{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }], { duration: 1000 });
+
+        return messageElement;
+    }
+
+    // Función para desplazarse hasta el último mensaje
+    function scrollToBottom(element) {
+        element.scrollTop = element.scrollHeight;
+    }
+
+    // Evento click en el botón "Send"
+    document.getElementById('sendBtn').addEventListener('click', function() {
+        var messageInput = document.getElementById('textbox').value.trim();
+        if (messageInput !== '') {
+            addUserMessage(messageInput);
+            document.getElementById('textbox').value = ''; // Limpiar el campo de texto
+            // Aquí puedes llamar a una función para procesar la respuesta del chatbot
+            // Ejemplo: processChatbotResponse(messageInput);
+        }
+    });
+</script>
+
+</body>
+</html>

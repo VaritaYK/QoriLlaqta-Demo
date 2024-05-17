@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paracetamol 500 mg - Farmindustria (Perú)</title>
+    <link rel="stylesheet" href="../CSS/styles3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="../../InicioSesion/Index.html"><button>Logout</button></a>
+    </header>
+    <div class="container">
+        <div class="product-image">
+            <img src="../IMG/SinReceta/Medicamento16.jpg" alt="Paracetamol 500 mg - Farmindustria">
+        </div>
+        <div class="product-info">
+            <div class="product-title">Paracetamol 500 mg - Farmindustria (Perú)</div>
+            <div class="product-description">
+                <p>El paracetamol es un analgésico y antipirético utilizado para aliviar dolores leves a moderados y reducir la fiebre. Esta presentación contiene tabletas de 500 mg para administración oral.</p>
+                <p>La marca "Farmindustria" es reconocida por la calidad de sus productos farmacéuticos en Perú.</p>
+            </div>
+            <div class="product-price">Precio unitario: S/. 4.80 por tableta</div>
+            <div class="product-manufacturer">Fabricado por: Farmindustria (Perú)</div>
+            <div class="dosage-info">
+                <h3>Información de dosificación:</h3>
+                <p><strong>Vía Oral:</strong></p>
+                <ul>
+                    <li>Adultos: 1 g cada 6-8 horas o 500-650 mg cada 4-6 horas; dosis máxima de 4 g al día.</li>
+                    <li>Niños mayores de 12 años: 500-650 mg cada 4-6 horas; dosis máxima de 4 g al día.</li>
+                    <li>Niños (desde 0 meses): 15 mg/kg cada 6 horas o 10 mg/kg cada 4 horas.</li>
+                    <li>En insuficiencia renal (I.R.): Ajustar intervalo entre dosis según la tasa de filtración glomerular (Clcr).</li>
+                    <li>Ancianos: Reducir dosis en un 25%.</li>
+                </ul>
+                <p><strong>Vía Rectal:</strong></p>
+                <ul>
+                    <li>Niños: 15 mg/kg cada 6 horas o 10 mg/kg cada 4 horas.</li>
+                    <li>Adultos y adolescentes: 600-1300 mg cada 6 horas; dosis máxima de 5 g al día.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="additional-info">
+            <h3>Detalles de envío y pago</h3>
+            <p>Costo: S/. 4.80</p>
+            <p>Cargos de importación y envío: Gratis</p>
+            <p>Entrega GRATIS el jueves, 6 de junio a Perú</p>
+            <p>Disponible</p>
+            <p>Entrega más rápida el miércoles, 22 de mayo</p>
+            <p>Enviado por: Amazon.com</p>
+            <p>Vendido por: Amazon.com</p>
+            <p>Devoluciones fáciles de 30 días</p>
+            <p>Transacción segura</p>
+            <p>Soporte de producto incluido</p>
+            <p>Agregar un recibo de regalo para facilitar las devoluciones</p>
+            <div class="quantity-control">
+                <div class="quantity-label">Cantidad:</div>
+                <div class="quantity-box">
+                    <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                    <input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="10" value="1" readonly>
+                    <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                </div>
+                <button class="buy-button" onclick="addToCart()">Agregar a carrito</button>
+                <button class="buy-button" onclick="confirmPurchase()">Comprar ahora</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function increaseQuantity() {
+            var input = document.getElementById('quantity');
+            var value = parseInt(input.value, 10);
+            if (!isNaN(value) && value < 10) {
+                input.value = value + 1;
+            }
+        }
+
+        function decreaseQuantity() {
+            var input = document.getElementById('quantity');
+            var value = parseInt(input.value, 10);
+            if (!isNaN(value) && value > 1) {
+                input.value = value - 1;
+            }
+        }
+
+        function addToCart() {
+            var quantity = document.getElementById('quantity').value;
+            alert('¡Agregado al Carrito! Cantidad: ' + quantity);
+        }
+
+        function confirmPurchase() {
+            var quantity = document.getElementById('quantity').value;
+            alert('¡Compra realizada! Cantidad: ' + quantity);
+        }
+    </script>
+</body>
+</html>

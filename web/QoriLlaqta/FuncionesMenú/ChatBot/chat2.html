@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+
+    <!-- Enlace a la hoja de estilo de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="text-center">HISTORIAL CLINICO</h1>
+
+    <div class="media">
+        <img src="https://img.freepik.com/vector-gratis/chatbot-mensaje-chat-vectorart_78370-4104.jpg" class="rounded-circle float-left img-thumbnail" width="75px" alt="...">
+        <div class="media-body">
+            <h5 style="margin:10px">ChatBot</h5>
+            <span style="margin-left: 10px">Online</span>
+        </div>
+    </div>
+
+    <!-- Contenedor de mensajes -->
+    <div id="container" class="container border overflow-auto" style="height: 500px">
+        <!-- Los mensajes se agregarán dinámicamente aquí -->
+    </div>
+
+    <div class="input-group">
+        <input id="textbox" type="text" class="form-control"/>
+        <div class="input-group-append">
+            <button id="sendBtn" type="button" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+
+    <!-- Botón para subir archivo PDF -->
+    <div class="mt-3">
+        <label for="fileInput" class="btn btn-secondary">Subir PDF</label>
+        <input type="file" id="fileInput" style="display: none;">
+    </div>
+
+</div>
+
+<!-- Inclusión de scripts de Bootstrap y otros -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Elementos del chatbot
+    var sendBtn = document.getElementById('sendBtn');
+    var textbox = document.getElementById('textbox');
+    var chatContainer = document.getElementById('container');
+    var fileInput = document.getElementById('fileInput'); // Nuevo elemento para manejar la carga de archivos
+
+    // Objeto para almacenar datos del usuario durante la interacción
+    var user = {
+        message: "",
+        counter: 0,
+        name: ""
+    };
+
+    // Función para enviar mensajes del médico (chatbot)
+    function doctorSendMessage(messageText) {
+        var messageElement = document.createElement('div');
+        messageElement.classList.add('w-50');
+        messageElement.classList.add('float-left');
+        messageElement.classList.add('shadow-sm');
+        messageElement.style.margin = "10px";
+        messageElement.style.padding = "5px";
+
+        messageElement.innerHTML = "<span>Médico: </span>" +
+            "<span style='margin-top:10px; padding:10px'>" + messageText + "</span>";
+
+        messageElement.animate([{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }], { duration: 1000 });
+
+        chatContainer.appendChild(messageElement);
+
+        // Desplazarse hasta el último mensaje
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    // Función para procesar mensajes del usuario, incluyendo PDF
+    function processMessage() {
+        var userMessage = user.message.toLowerCase().trim();
+
+        switch (user.counter) {
+            case 0:
+                // Reconocimiento por documento de identificación (DNI)
+                if (validateDNI(userMessage)) {
+                    user.name = "Kenyi Yaranga"; // Simulación de nombre asociado al DNI
+                    doctorSendMessage("Hola " + user.name.split(' ')[0] + ". Muchas gracias por brindarme tu DNI. Ahora, por favor, proporciona el PDF de tu permiso para acceder a tu historial clínico.");
+                    user.counter++;
+                } else {
+                    doctorSendMessage("Por favor, introduce un número de DNI válido (8 dígitos numéricos).");
+                }
+                break;
+            case 1:
+                // Recibir PDF del permiso
+                // La validación del PDF se realizará al cargar el archivo
+                break;
+        }
+    }
+
+    // Función para validar número de DNI (8 dígitos numéricos)
+    function validateDNI(dni) {
+        return /^\d{8}$/.test(dni);
+    }
+
+    // Función para determinar si el mensaje del usuario es un archivo PDF
+    function isPDF(file) {
+        return file.name.toLowerCase().endsWith(".pdf");
+    }
+
+    // Función para enviar mensajes del usuario
+    function sendMessage(messageText) {
+        var messageElement = document.createElement('div');
+        messageElement.classList.add('w-50');
+        messageElement.classList.add('float-right');
+        messageElement.classList.add('shadow-sm');
+        messageElement.style.margin = "10px";
+        messageElement.style.padding = "5px";
+
+        messageElement.innerHTML = "<span>Tú: </span>" +
+            "<span style='margin-top:10px; padding:10px'>" + messageText + "</span>";
+
+        messageElement.animate([{ easing: "ease-in", opacity: 0.4 }, { opacity: 1 }], { duration: 1000 });
+
+        chatContainer.appendChild(messageElement);
+
+        // Desplazarse hasta el último mensaje
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        // Procesar el mensaje del usuario
+        user.message = messageText;
+        processMessage();
+    }
+
+    // Evento click en el botón "Send"
+    sendBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+        if (textbox.value.trim() === "") {
+            alert('Por favor, escribe un mensaje.');
+        } else {
+            let messageText = textbox.value.trim();
+            sendMessage(messageText);
+            textbox.value = ""; // Limpiar el campo de texto después de enviar el mensaje
+        }
+    });
+
+    // Evento change en el elemento de entrada de archivo (cuando se selecciona un archivo)
+    fileInput.addEventListener('change', function(event) {
+        var file = event.target.files[0]; // Obtener el archivo seleccionado
+        if (file && isPDF(file)) {
+            doctorSendMessage("¡Muchas gracias! Tu archivo ha sido recibido. Aquí está el código para recoger tu historial clínico: 294234. Por favor, no compartas este código con nadie. Puedes acercarte a la clínica en el horario de atención disponible desde las 7 am hasta la 1 pm.");
+            user.counter = 0; // Reiniciar contador para futuras interacciones
+        } else {
+            doctorSendMessage("Por favor, selecciona un archivo PDF válido como permiso para acceder a tu historial clínico.");
+        }
+    });
+    
+    // Ejecutar un mensaje inicial del médico para historial clínico
+    doctorSendMessage("Buen día. Soy el Dr. Marcos Soto. Para acceder a tu historial clínico, necesitaremos verificar algunos datos personales. Por favor, introduce tu documento de identificación (DNI).");
+
+</script>
+
+</body>
+</html>

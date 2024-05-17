@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CanjearMedicamento.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <title>Receta Médica</title>
+  </head>
+  <body>
+    <header>
+      <a href="../InicioSesion/Index.html"><button>Logout</button></a>
+    </header>
+    <h1>Generar Receta Médica</h1>
+    <form id="prescriptionForm">
+      <label for="doctorName">Nombre del Doctor:</label>
+      <input type="text" id="doctorName" name="doctorName" required />
+      <br />
+      <label for="pacienteName">Nombre del Paciente:</label>
+      <input type="text" id="pacienteName" name="pacienteName" required />
+      <br />
+      <label for="medicamento">Código de Receta:</label>
+      <input type="text" id="medicamento" name="medicamento" required />
+      <br />
+      <input type="submit" value="Generar Receta" />
+    </form>
+
+    <h2>Detalles de la Receta</h2>
+    <div class="card">
+    <p>Doctor: <span id="doctorNameDisplay"></span></p>
+    <p>Paciente: <span id="pacienteNameDisplay"></span></p>
+    <p>Medicamentos Recetados: <span id="medicamentoDetails"></span></p>
+    <p>Fecha de Prescripción: <span id="prescriptionDate"></span></p>
+    <p>Código Aleatorio: <span id="codigoAleatorio"></span></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
